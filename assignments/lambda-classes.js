@@ -57,3 +57,35 @@ class ProjectManager extends Instructor {
     return `${this.name} debugs ${student.name}'s code on ${subject}.`;
   }
 }
+
+//=======INSTRUCTORS
+
+const adam = new Instructor({
+  name: 'Adam',
+  age: 31,
+  location: 'Liverpool',
+  gender: 'male',
+  specialty: 'Back-end',
+  favLanguage: 'Python',
+  catchPhrase: 'Don\'t panic!'
+});
+
+const gustavo = new Instructor({
+  name: 'Gustavo',
+  age: 29,
+  location: 'Bogota',
+  gender: 'male',
+  specialty: 'Front-end',
+  favLanguage: 'Javascript',
+  catchPhrase: 'Just one more thing...'
+});
+
+const dominika = new Instructor({
+  name: 'Dominika',
+  age: 36,
+  location: 'Krakow',
+  gender: 'female',
+  specialty: 'Back-end',
+  favLanguage: 'Ruby',
+  catchPhrase: 'Yada, yada, yada!'
+});
