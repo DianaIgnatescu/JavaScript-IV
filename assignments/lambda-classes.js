@@ -130,3 +130,41 @@ const eloise = new Student({
     'Ruby',
   ]
 });
+
+//======PROJECT MANAGERS
+
+const randy = new ProjectManager({
+  name: 'Randy',
+  age: 40,
+  location: 'New York',
+  gender: 'male',
+  specialty: 'Front-end',
+  favLanguage: 'Javascript',
+  catchPhrase: 'You\'re fired!',
+  gradClassName: 'CS13',
+  favInstructor: 'Gustavo',
+});
+
+const skylar = new ProjectManager({
+  name: 'Skylar',
+  age: 25,
+  location: 'Seattle',
+  gender: 'female',
+  specialty: 'Back-end',
+  favLanguage: 'Python',
+  catchPhrase: 'Lovely jubbly!',
+  gradClassName: 'CS14',
+  favInstructor: 'Dominika'
+});
+
+const mortimer = new ProjectManager({
+  name: 'Mortimer',
+  age: 65,
+  location: 'Pleasantville',
+  gender: 'male',
+  specialty: 'Back-end',
+  favLanguage: 'Ruby',
+  catchPhrase: 'I pity the fool!',
+  gradClassName: 'CS4',
+  favInstructor: 'Adam',
+});
