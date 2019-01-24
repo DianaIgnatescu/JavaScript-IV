@@ -34,7 +34,9 @@ class Student extends Person {
     this.favSubjects = studentAttrs.favSubjects;
   }
   listsSubjects() {
-    return `${this.favSubjects}`;
+    this.favSubjects.forEach(function(subject) {
+      console.log(subject);
+    });
   }
   PRAssignment(subject) {
     return `${this.name} has submitted a PR for ${subject}.`;
@@ -168,3 +170,21 @@ const mortimer = new ProjectManager({
   gradClassName: 'CS4',
   favInstructor: 'Adam',
 });
+
+console.log(adam.speak());
+console.log(gustavo.specialty);
+console.log(dominika.favLanguage);
+console.log(gustavo.catchPhrase);
+console.log(adam.demo('Redux'));
+console.log(dominika.grade('Eloise', 'CSS'));
+console.log(elena.previousBackground);
+console.log(elena.className);
+console.log(luca.favSubjects);
+console.log(eloise.PRAssignment('Javascript'));
+console.log(luca.sprintChallenge('React'));
+console.log(mortimer.speak());
+console.log(mortimer.gradClassName);
+console.log(skylar.favInstructor);
+console.log(randy.standUp('Randy\'s group'));
+console.log(skylar.debugsCode(luca, 'Python'));
+elena.listsSubjects();
