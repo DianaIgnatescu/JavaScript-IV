@@ -32,6 +32,7 @@ class Student extends Person {
     this.previousBackground = studentAttrs.previousBackground;
     this.className = studentAttrs.className;
     this.favSubjects = studentAttrs.favSubjects;
+    this.grade = studentAttrs.grade;
   }
   listsSubjects() {
     this.favSubjects.forEach(function(subject) {
@@ -43,6 +44,12 @@ class Student extends Person {
   }
   sprintChallenge(subject) {
     return `${this.name} has begun sprint challenge on ${subject}.`;
+  }
+  graduate() {
+    if (this.grade > 70) {
+      return `${this.name} is ready to graduate!`
+    }
+    return `${this.name} needs to increase their score before graduating!`
   }
 }
 
@@ -104,7 +111,8 @@ const luca = new Student({
   favSubjects: [
     'HTML',
     'Javascript',
-  ]
+  ],
+  grade: 75,
 });
 
 const elena = new Student({
@@ -117,7 +125,8 @@ const elena = new Student({
   favSubjects: [
     'React',
     'Javascript',
-  ]
+  ],
+  grade: 84,
 });
 
 const eloise = new Student({
@@ -130,7 +139,8 @@ const eloise = new Student({
   favSubjects: [
     'Python',
     'Ruby',
-  ]
+  ],
+  grade: 62,
 });
 
 //======PROJECT MANAGERS
@@ -188,3 +198,5 @@ console.log(skylar.favInstructor);
 console.log(randy.standUp('Randy\'s group'));
 console.log(skylar.debugsCode(luca, 'Python'));
 elena.listsSubjects();
+console.log(elena.graduate());
+console.log(eloise.graduate());
