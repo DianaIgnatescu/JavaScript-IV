@@ -89,3 +89,44 @@ const dominika = new Instructor({
   favLanguage: 'Ruby',
   catchPhrase: 'Yada, yada, yada!'
 });
+
+//=======STUDENTS
+
+const luca = new Student({
+  name: 'Luca',
+  age: 26,
+  location: 'Melbourne',
+  gender: 'male',
+  previousBackground: 'Graphic Designer',
+  className: 'FSW17',
+  favSubjects: [
+    'HTML',
+    'Javascript',
+  ]
+});
+
+const elena = new Student({
+  name: 'Elena',
+  age: 29,
+  location: 'Bucharest',
+  gender: 'female',
+  previousBackground: 'Student',
+  className: 'FSW16',
+  favSubjects: [
+    'React',
+    'Javascript',
+  ]
+});
+
+const eloise = new Student({
+  name: 'Eloise',
+  age: 31,
+  location: 'Lyon',
+  gender: 'female',
+  previousBackground: 'Business Analyst',
+  className: 'FSW17',
+  favSubjects: [
+    'Python',
+    'Ruby',
+  ]
+});
