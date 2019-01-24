@@ -7,7 +7,7 @@ Prototype Refactor
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
 */
-
+// ===== Instructions were purposefully left in to better visualize the refactoring.
 /*
   === GameObject ===
   * createdAt
@@ -15,14 +15,15 @@ Prototype Refactor
   * destroy() // prototype method -> returns the string: 'Object was removed from the game.'
 */
 
-const GameObject = function (gameObjectAttrs) {
-  this.createdAt = gameObjectAttrs.createdAt;
-  this.dimensions = gameObjectAttrs.dimensions;
-  this.name = gameObjectAttrs.name;
-}
-
-GameObject.prototype.destroy = function () {
-  return `${this.name} was removed from the game.`;
+class GameObject {
+  constructor(gameObjectAttrs) {
+    this.createdAt = gameObjectAttrs.createdAt;
+    this.dimensions = gameObjectAttrs.dimensions;
+    this.name = gameObjectAttrs.name;
+  }
+  destroy() {
+    return `${this.name} was removed from the game.`;
+  }
 }
 
 /*
@@ -33,15 +34,14 @@ GameObject.prototype.destroy = function () {
   * should inherit destroy() from GameObject's prototype
 */
 
-const CharacterStats = function (charAttributes) {
-  this.healthPoints = charAttributes.healthPoints;
-  GameObject.call(this, charAttributes);
-}
-
-CharacterStats.prototype = Object.create(GameObject.prototype);
-
-CharacterStats.prototype.takeDamage = function () {
-  return `${this.name} took damage.`
+class CharacterStats extends GameObject {
+  constructor(charAttributes) {
+    super(charAttributes);
+    this.healthPoints = charAttributes.healthPoints;
+  }
+  takeDamage() {
+    return `${this.name} took damage.`;
+  }
 }
 
 /*
@@ -54,17 +54,16 @@ CharacterStats.prototype.takeDamage = function () {
   * should inherit takeDamage() from CharacterStats
 */
 
-const Humanoid = function (humanoidAttrs) {
-  this.team = humanoidAttrs.team;
-  this.weapons = humanoidAttrs.weapons;
-  this.language = humanoidAttrs.language;
-  CharacterStats.call(this, humanoidAttrs);
-}
-
-Humanoid.prototype = Object.create(CharacterStats.prototype);
-
-Humanoid.prototype.greet = function () {
-  return `${this.name} offers greeting in ${this.language}.`
+class Humanoid extends CharacterStats {
+  constructor(humanoidAttrs) {
+    super(humanoidAttrs);
+    this.team = humanoidAttrs.team;
+    this.weapons = humanoidAttrs.weapons;
+    this.language = humanoidAttrs.language;
+  }
+  greet() {
+    return `${this.name} offers greeting in ${this.language}.`
+  }
 }
  
 /*
